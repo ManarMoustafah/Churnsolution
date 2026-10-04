@@ -1,4 +1,7 @@
 import logo from "../assets/logo.png";
+import image53x from "../assets/image-5@3x.png";
+import stripe_app_marketplace from "../assets/stripe_app_marketplace.png";
+import churn_solution from "../assets/churn-solution.svg";
 
 export default function Footer() {
   return (
@@ -11,15 +14,12 @@ export default function Footer() {
               width="35"
               height="35px"
               className="footer-logo"
+              alt="churnsolution"
             ></img>
             <h1>Churn Solution</h1>
             <p> Reduce Churn and Retain more subscribers.</p>
           </div>
-          <img
-            src="https://churnsolution.com/wp-content/uploads/2024/03/image-5@3x.png"
-            alt="churnsolution"
-            style={{ width: "auto", height: "34px" }}
-          />
+          <img className="footer-brand-img" src={image53x} />
         </div>
 
         <nav className="footer-navigation">
@@ -188,17 +188,11 @@ export default function Footer() {
                 href="https://marketplace.stripe.com/apps/churn-solution"
                 target="_blank"
                 rel="noreferrer noopener"
-                data-event-action="stripe_app_view"
-                data-event-category="cta"
-                data-event-label="stripe_app_marketplace"
-                data-event-from="WP-footer"
               >
                 <img
                   decoding="async"
-                  src="https://churnsolution.com/wp-content/uploads/2024/03/stripe_app_marketplace.png"
-                  alt="Stripe App Marketplace"
-                  className="wp-image-2068"
-                  style={{ width: "auto", height: "45px" }}
+                  src={stripe_app_marketplace}
+                  className="footer-brand-img"
                 />
               </a>
             </figure>
@@ -212,25 +206,19 @@ export default function Footer() {
                 data-event-from="WP-footer"
               >
                 <img
-                  src="https://churntools.com/badge/churn-solution.svg"
+                  className="footer-brand-img"
+                  src={churn_solution}
                   alt="Churn Solution on ChurnTools"
                 />
               </a>
             </figure>
           </div>
-          <nav
-            className="footer-social-links"
-            aria-label="Social Media Links"
-          >
+          <nav className="footer-social-links" aria-label="Social Media Links">
             <a
               href="https://www.facebook.com/churn.solution"
               target="_blank"
               className="footer-social-icon"
               aria-label="Facebook"
-              data-event-action="social_facebook"
-              data-event-category="cta"
-              data-event-label="social_facebook"
-              data-event-from="WP-footer"
             >
               <svg
                 width="22"
@@ -250,10 +238,6 @@ export default function Footer() {
               target="_blank"
               className="footer-social-icon"
               aria-label="Instagram"
-              data-event-action="social_instagram"
-              data-event-category="cta"
-              data-event-label="social_instagram"
-              data-event-from="WP-footer"
             >
               <svg
                 width="22"
@@ -273,10 +257,6 @@ export default function Footer() {
               target="_blank"
               className="footer-social-icon"
               aria-label="linkedin"
-              data-event-action="social_linkedin"
-              data-event-category="cta"
-              data-event-label="social_linkedin"
-              data-event-from="WP-footer"
             >
               <svg
                 width="24"
@@ -300,10 +280,6 @@ export default function Footer() {
               target="_blank"
               className="footer-social-icon"
               aria-label="YouTube"
-              data-event-action="social_youtube"
-              data-event-category="cta"
-              data-event-label="social_youtube"
-              data-event-from="WP-footer"
             >
               <svg
                 width="22"
@@ -328,10 +304,6 @@ export default function Footer() {
               href="mailto:info@churnsolution.com"
               className="footer-social-icon"
               aria-label="Email"
-              data-event-action="social_email"
-              data-event-category="cta"
-              data-event-label="social_email"
-              data-event-from="WP-footer"
             >
               <svg
                 width="22"

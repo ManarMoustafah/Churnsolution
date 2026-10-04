@@ -1,0 +1,11 @@
+<svg width="200" height="40" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    <rect width="200" height="40" rx="6" fill="url(#grad)"/>
+    <text x="100" y="14" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="rgba(255,255,255,0.9)" text-anchor="middle">FEATURED ON</text>
+    <text x="100" y="30" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="800" fill="white" text-anchor="middle">ChurnTools</text>
+</svg>

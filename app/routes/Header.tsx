@@ -16,9 +16,9 @@ function Header() {
       <nav className="headerContent">
         <div className="logoContener">
           <div className="hum-ic">
-            <a onClick={() => setHomeMenuOpen(!HomeMenuOpen)}>
-              <img src={more} alt="more"></img>
-            </a>
+            <button onClick={() => setHomeMenuOpen(!HomeMenuOpen)} className="moreBtn">
+              <img src={more} alt="more" className="moreicon"></img>
+            </button>
             {HomeMenuOpen && (
               <div className="HomeMenu">
                 <HomeMenu />

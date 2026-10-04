@@ -1,15 +1,19 @@
 import { NavLink } from "react-router";
+import blogIcon from "../assets/blog-icon.png";
+import bookDemoIcon from "../assets/book-demo-icon.png";
+import caseStudiesIcon from "../assets/case-studies-icon.png";
+import developerDocsIcon from "../assets/developer-docs-icon.png";
+import howItWorksIcon from "../assets/how-it-works-icon.png";
+import integrationsIcon from "../assets/integrations-icon.png";
+import roiCalculatorIcon from "../assets/roi-calculator-icon.png";
+import mutiple_processors from "../assets/mutiple-processors.svg";
 
 export default function ResourcesMenu() {
   return (
     <div className="resources-tab">
       <section className="resources-grid">
         <a className="resource-item">
-          <img
-            className="resource-icon"
-            src="https://churnsolution.com/wp-content/uploads/2026/01/developer-docs-icon.png"
-            alt="docs"
-          />
+          <img className="resource-icon" src={developerDocsIcon} alt="docs" />
           <div className="resource-content">
             <h2 className="resource-title">Developer Docs</h2>
             <p className="resource-description">
@@ -18,11 +22,7 @@ export default function ResourcesMenu() {
           </div>
         </a>
         <a className="resource-item">
-          <img
-            className="resource-icon"
-            src="https://churnsolution.com/wp-content/uploads/2026/01/book-demo-icon.png"
-            alt="demo"
-          />
+          <img className="resource-icon" src={bookDemoIcon} alt="demo" />
           <div className="resource-content">
             <h2 className="resource-title">Book Demo</h2>
             <p className="resource-description">
@@ -33,7 +33,7 @@ export default function ResourcesMenu() {
         <a className="resource-item">
           <img
             className="resource-icon"
-            src="https://churnsolution.com/wp-content/uploads/2026/01/how-it-works-icon.png"
+            src={howItWorksIcon}
             alt="how-it-works"
           />
           <div className="resource-content">
@@ -49,11 +49,7 @@ export default function ResourcesMenu() {
           //  href="/blog/"
           className="resource-item"
         >
-          <img
-            className="resource-icon"
-            src="https://churnsolution.com/wp-content/uploads/2026/01/blog-icon.png"
-            alt="blog"
-          />
+          <img className="resource-icon" src={blogIcon} alt="blog" />
           <div className="resource-content">
             <h2 className="resource-title">Blog</h2>
             <p className="resource-description">
@@ -64,7 +60,7 @@ export default function ResourcesMenu() {
         <a className="resource-item">
           <img
             className="resource-icon"
-            src="https://churnsolution.com/wp-content/uploads/2026/01/roi-calculator-icon.png"
+            src={roiCalculatorIcon}
             alt="calculator"
           />
           <div className="resource-content">
@@ -77,7 +73,7 @@ export default function ResourcesMenu() {
         <a className="resource-item">
           <img
             className="resource-icon"
-            src="https://churnsolution.com/wp-content/uploads/2026/04/case-studies-icon.png"
+            src={caseStudiesIcon}
             alt="case-studies"
           />
           <div className="resource-content">
@@ -90,7 +86,7 @@ export default function ResourcesMenu() {
         <a className="resource-item integrations-content">
           <img
             className="resource-icon"
-            src="https://churnsolution.com/wp-content/uploads/2026/08/integrations-icon.png"
+            src={integrationsIcon}
             alt="integrations"
           />
           <div className="resource-content ">
@@ -105,7 +101,7 @@ export default function ResourcesMenu() {
       <section className="integration-section">
         <img
           className="integration-image"
-          src="https://churnsolution.com/wp-content/uploads/2026/01/mutiple-processors.svg"
+          src={mutiple_processors}
           alt="mutiple-processors"
         />
         <div className="integration-content">

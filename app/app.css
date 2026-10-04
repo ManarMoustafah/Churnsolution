@@ -81,6 +81,19 @@ HTML {
   cursor: pointer;
   visibility: hidden;
 }
+.moreicon{
+   height: 24px;
+  width: 24px;
+}
+.moreBtn{
+    background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .navbar {
   display: flex;
@@ -192,6 +205,7 @@ HTML {
 /*===============================================*/
 /*===================sec1home====================*/
 /*===============================================*/
+
 .sec1home-all {
   background-image: linear-gradient(135deg, #eebd231a, #fff, #fff);
   margin-left: calc(-50vw + 50%);
@@ -1007,7 +1021,7 @@ HTML {
 }
 
 .ResourcesIndexPar {
-  color: #728095;
+  color: #5b6a81;
   font-size: 14px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -1039,6 +1053,7 @@ HTML {
   display: flex;
   flex-direction: row;
   font-size: 12px !important;
+  
 }
 
 .authorName {
@@ -1051,7 +1066,7 @@ HTML {
 }
 
 .Article_date {
-  color: #718797;
+  color: #5b6a81;
 }
 
 .pagemenu {
@@ -1290,6 +1305,10 @@ HTML {
   max-width: 1400px;
   gap: 32px;
 
+}
+.footer-brand-img {
+  width: auto;
+  height: 34px;
 }
 
 .footer-brand-section {
