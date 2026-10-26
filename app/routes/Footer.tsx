@@ -1,4 +1,4 @@
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.webp";
 import image53x from "../assets/image-5@3x.png";
 import stripe_app_marketplace from "../assets/stripe_app_marketplace.png";
 import churn_solution from "../assets/churn-solution.svg";
@@ -11,15 +11,15 @@ export default function Footer() {
           <div className="footer-brand-content">
             <img
               src={logo}
-              width="35"
-              height="35px"
-              className="footer-logo"
+              width="51"
+              height="51"
+              className="logo"
               alt="churnsolution"
             ></img>
             <h1>Churn Solution</h1>
             <p> Reduce Churn and Retain more subscribers.</p>
           </div>
-          <img className="footer-brand-img" src={image53x} />
+          <img className="footer-brand-img" src={image53x} alt="footer-brand-img" />
         </div>
 
         <nav className="footer-navigation">
@@ -193,6 +193,7 @@ export default function Footer() {
                   decoding="async"
                   src={stripe_app_marketplace}
                   className="footer-brand-img"
+                   alt="footer-brand-img"
                 />
               </a>
             </figure>

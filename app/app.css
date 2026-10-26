@@ -29,9 +29,8 @@ HTML {
 /* مشان لما اعمل سكرول ييدي بالزبط عند العنوان */
 .ArticleSections div,
 .menu_tittel-link {
-  scroll-margin-top: 80px;
-  /* غيّر الرقم بناءً على ارتفاع الهيدر الثابت عندك */
-}
+  scroll-margin-top: 80px;/*header height*/
+} 
 
 .header {
   color: #0f124d;
@@ -73,6 +72,7 @@ HTML {
   height: 34px;
 }
 
+
 .hum-ic {
   height: 24px;
   width: 24px;
@@ -80,13 +80,21 @@ HTML {
   border: none;
   cursor: pointer;
   visibility: hidden;
+
+
+  margin-bottom: 15px;
+  margin-right: 5px;
 }
-.moreicon{
-   height: 24px;
-  width: 24px;
+
+.moreicon {
+  height: 35px;
+  width: 35px;
+
+
 }
-.moreBtn{
-    background: none;
+
+.moreBtn {
+  background: none;
   border: none;
   padding: 0;
   cursor: pointer;
@@ -162,8 +170,9 @@ HTML {
   color: #131529;
   text-decoration: none;
   font-weight: 500 !important;
-      font-size: 16px !important;
+  font-size: 16px !important;
 }
+
 .menuitem:hover {
   color: #c10fff;
 }
@@ -197,7 +206,7 @@ HTML {
 
 }
 
-.navhbar-vertical-menu-item:hover  {
+.navhbar-vertical-menu-item:hover {
   color: #c10fff;
 }
 
@@ -774,7 +783,7 @@ HTML {
   pointer-events: auto;
 }
 
- /*.Resources::after {
+/*.Resources::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -835,12 +844,18 @@ HTML {
   border: 1px solid #e0e0e0 !important;
   filter: brightness(1) !important;
 }
+.Blogresource{
+  box-shadow: 0 0 5px 5px rgba(250, 233, 78, 0.397) !important;
+}
 
 .integrations-content {
   grid-column: span 2;
 }
 
 .resource-item:hover {
+  background: #efeff3;
+}
+.Blogresource:hover {
   background: #efeff3;
 }
 
@@ -1046,14 +1061,15 @@ HTML {
   margin-right: 10px;
   width: 40px;
   height: 40px;
-  border-radius: 50px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .name-date {
   display: flex;
   flex-direction: row;
   font-size: 12px !important;
-  
+
 }
 
 .authorName {
@@ -1175,8 +1191,9 @@ HTML {
 .ArticleImg {
   box-sizing: border-box;
   height: auto;
-  max-width: 100%;
+  width: 100%;
   vertical-align: bottom;
+  
 }
 
 .ArticleIntro {
@@ -1236,6 +1253,22 @@ HTML {
   border-left: 1px solid #0f124d;
   font-weight: 700 !important;
 }
+
+.menu_tittel-link:target {
+ text-shadow: 0 0 0.4em rgb(255, 255, 2);
+  font-weight: 700 !important;
+}
+
+.new:target {
+ text-shadow: 0 0 0.4em rgb(255, 255, 2);
+  font-weight: 700 !important;
+}
+
+.sections_tittel.active {
+ text-shadow: 0 0 0.4em rgb(244, 53, 23);
+  font-weight: 700 !important;
+}
+/*===============================================*/
 
 .smallBox {
   flex-basis: 30%;
@@ -1306,9 +1339,11 @@ HTML {
   gap: 32px;
 
 }
+
 .footer-brand-img {
-  width: auto;
+  width: 180px;
   height: 34px;
+   object-fit: contain;  object-position: left center
 }
 
 .footer-brand-section {
@@ -1592,3 +1627,18 @@ HTML {
 
   }
 }
+
+
+.companyContent {
+  padding: 50px;
+  color: #313131;
+  background-color: #aeacac;
+  border-radius: 8px;
+  width: 80%;
+  margin-top: 70px;
+  TEXT-ALIGN: center;
+  font-size: 26px;
+  font-weight: bold;
+  color: #3b2d6d;
+}
+

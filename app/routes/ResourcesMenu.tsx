@@ -47,7 +47,7 @@ export default function ResourcesMenu() {
           to="/Blog"
           // data-match="blog"
           //  href="/blog/"
-          className="resource-item"
+          className="resource-item Blogresource"
         >
           <img className="resource-icon" src={blogIcon} alt="blog" />
           <div className="resource-content">

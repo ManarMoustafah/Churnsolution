@@ -3,7 +3,7 @@ import { NavLink } from "react-router";
 import ResourcesMenu from "./ResourcesMenu";
 import HomeMenu from "./HomeMenu";
 
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.webp";
 import more from "../assets/more.png";
 import arrow from "../assets/arrow.png";
 import { useState } from "react";
@@ -16,7 +16,10 @@ function Header() {
       <nav className="headerContent">
         <div className="logoContener">
           <div className="hum-ic">
-            <button onClick={() => setHomeMenuOpen(!HomeMenuOpen)} className="moreBtn">
+            <button
+              onClick={() => setHomeMenuOpen(!HomeMenuOpen)}
+              className="moreBtn"
+            >
               <img src={more} alt="more" className="moreicon"></img>
             </button>
             {HomeMenuOpen && (
@@ -27,7 +30,13 @@ function Header() {
           </div>
 
           <NavLink to="/" className="logoContener">
-            <img className="logo" src={logo} alt="logo" />
+            <img
+              className="logo"
+              src={logo}
+              alt="logo"
+              width="51"
+              height="51"
+            />
             <span> churn Solution</span>
           </NavLink>
         </div>
@@ -35,12 +44,12 @@ function Header() {
         <div className="navbar">
           <NavLink to="/Products">
             Products
-            <img src={arrow} className="arrowheader"></img>
+            <img src={arrow} className="arrowheader" alt="arrow" />
           </NavLink>
           <div className="Resources">
             <a className="ResourcesLink">
               Resources
-              <img src={arrow} className="arrowheader"></img>
+              <img src={arrow} className="arrowheader" alt="arrow" />
             </a>
             <div className="ResourcesMenu">
               <ResourcesMenu />

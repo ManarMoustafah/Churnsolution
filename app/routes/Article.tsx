@@ -9,13 +9,14 @@ import {
 import { doc, getDoc } from "firebase/firestore";
 // @ts-ignore
 import { db } from "../config/firebase";
+import { useEffect, useState } from "react";
 
 // 1. LOADER: Fetch data for a single article using the ID from the URL.
 export async function loader({ params }: LoaderFunctionArgs) {
   const id = params.id;
 
   if (!id) {
-     return redirect("../Blog");
+    return redirect("../Blog");
   }
 
   // read from database
@@ -38,7 +39,9 @@ export function ErrorBoundary() {
     return (
       <div className="errorPage">
         <h1>This page doesn't seem to exist.</h1>
-        <p>It looks like the link pointing here was faulty. Maybe try searching?</p>
+        <p>
+          It looks like the link pointing here was faulty. Maybe try searching?
+        </p>
       </div>
     );
   }
@@ -54,6 +57,41 @@ export default function Article() {
   const aditTitle = (title: string) => {
     return title.toLowerCase().trim().replace(/\s+/g, "-");
   };
+  const [activeTittel, setActiveTittel] = useState(-1);
+  //   useEffect(() => {
+
+  //   const titles = document.querySelectorAll(".ArticleSections .sections_tittel");
+
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         entry.target.classList.toggle("active", entry.isIntersecting);
+  //       });
+  //     },
+  //     { rootMargin: "0px 0px -88% 0px" }
+  //   );
+
+  //   titles.forEach((t) => observer.observe(t));
+  //   return () => observer.disconnect();
+  // }, [article]);
+  
+
+  useEffect(() => {
+    const TopTittel = () => {
+      const titles = document.querySelectorAll( ".ArticleSections .sections_tittel", );
+      let currentTittel = -1;
+
+      titles.forEach((title, i) => {
+        if (title.getBoundingClientRect().top <= 100) { // موقع العنوان من أعلى الشاشة
+          currentTittel = i;
+        }
+      });
+
+      setActiveTittel(currentTittel);
+    };
+
+    window.addEventListener("scroll", TopTittel);
+  }, [article]);
 
   return (
     <div className="ArticleDetailPage">
@@ -63,11 +101,11 @@ export default function Article() {
           <h1 className="ArticleTitle">{article.Article_name}</h1>
           <img
             className="ArticleImg"
-            src={
-              article.Article_img ??
-              "https://churnsolution.com/wp-content/uploads/2026/07/subscription-churn-dashboard-the-2026-guide-to-actionable-revenue-intelligence.jpg"
-            }
+            src={"/pic.webp"}
+            width="294"
+            height="200"
             alt={article.Article_name}
+            fetchPriority="high"
           />
         </div>
         <div className="RigthArticleDetailPage-bottom">
@@ -81,12 +119,18 @@ export default function Article() {
                 },
                 index: number,
               ) => {
-
-                  const sectionId = aditTitle(section.sections_tittel+"sectionId");
-                  const contentsId = aditTitle(section.sections_tittel+"contentsId");
+                const sectionId = aditTitle(
+                  section.sections_tittel + "sectionId",
+                );
+                const contentsId = aditTitle(
+                  section.sections_tittel + "contentsId",
+                );
                 return (
                   <div key={index} id={sectionId}>
-                    <a className={`sections_tittel`} href={`#${contentsId}`} >
+                    <a
+                      href={`#${contentsId}`}
+                      className={`sections_tittel new ${index === activeTittel ? "active" : ""}`}
+                    >
                       {section.sections_tittel}
                     </a>
                     <p className="sections_content">
@@ -107,12 +151,20 @@ export default function Article() {
               {article.Article_sections?.map(
                 (section: { sections_tittel?: string }, index: number) => {
                   if (!section.sections_tittel) return null;
-                  const sectionId = aditTitle(section.sections_tittel+"sectionId");
-                  const contentsId = aditTitle(section.sections_tittel+"contentsId");
+                  const sectionId = aditTitle(
+                    section.sections_tittel + "sectionId",
+                  );
+                  const contentsId = aditTitle(
+                    section.sections_tittel + "contentsId",
+                  );
 
                   return (
                     <li key={index} className="menu_tittel">
-                      <a href={`#${sectionId}`} className="menu_tittel-link" id={contentsId}>
+                      <a
+                        href={`#${sectionId}`}
+                        className="menu_tittel-link"
+                        id={contentsId}
+                      >
                         {section.sections_tittel}
                       </a>
                     </li>
@@ -122,7 +174,7 @@ export default function Article() {
             </ol>
           </div>
         </div>
-        <div className="smallBox">
+        {/* <div className="smallBox">
           <img
             className="smallBoxImg"
             src="	https://churnsolution.com/wp-content/uploads/2023/09/cropped-logo-1-2.png"
@@ -138,7 +190,7 @@ export default function Article() {
               Join Us Now
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

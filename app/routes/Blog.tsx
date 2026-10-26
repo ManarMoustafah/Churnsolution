@@ -21,6 +21,7 @@ import {
 
 // @ts-ignore: firebase config is a JavaScript module without TypeScript declarations
 import { db } from "../config/firebase";
+import avater from "../assets/avater.png";
 
 // Pagination==========================
 const PAGE_SIZE = 6;
@@ -117,11 +118,16 @@ export default function Blog() {
             >
               <img
                 className="ResourcesIndexImg"
-                src={
-                  blog.Article_img ??
-                  "https://churnsolution.com/wp-content/uploads/2026/07/subscription-churn-dashboard-the-2026-guide-to-actionable-revenue-intelligence.jpg"
-                }
+                // src={
+                //   blog.Article_img ??
+                //   "https://churnsolution.com/wp-content/uploads/2026/07/subscription-churn-dashboard-the-2026-guide-to-actionable-revenue-intelligence.jpg"
+                // }
+                src={"/pic.webp"}
+              
+              width="294"
+            height="200"
                 alt={blog.Article_name}
+                fetchPriority="high"
               />
 
               <span className="ResourcesIndexTittel">{blog.Article_name}</span>
@@ -130,11 +136,7 @@ export default function Blog() {
             <p className="ResourcesIndexPar">{blog.Article_intro}</p>
 
             <div className="authorinfo">
-              <img
-                className="authorImg"
-                src="https://secure.gravatar.com/avatar/7f989462eccaa3a48eaf3c7b3e0635963b393795627f4ceeb37452da6a9ec0a9?s=96&d=mm&r=g"
-                alt=""
-              />
+              <img className="authorImg" src={avater} alt="authorImg" />
               <div className="name-date">
                 <p className="authorName"> {blog.Article_author}</p>
                 <p className="Article_date"> {blog.Article_date}</p>
